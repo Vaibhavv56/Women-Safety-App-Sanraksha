@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "675219167797",
+    "project_id": "sanrakshaan25",
+    "storage_bucket": "sanrakshaan25.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675219167797:android:8570daa5854c405164ef7c",
+        "android_client_info": {
+          "package_name": "com.example.sanrakshan25"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaTgA7LkQehVe7jy3z1opRXrB4r-qGqOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
