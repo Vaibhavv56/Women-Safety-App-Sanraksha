@@ -542,6 +542,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -563,7 +564,7 @@ class _TrackMePageState extends State<TrackMePage> {
   List<Marker> _nearbyServicesMarkers = [];
   bool _showNearbyServices = false;
 
-   static const String _googlePlacesApiKey = 'AIzaSyB1LWBukEu9tQf8IANRU8N-dekeVeTBUFE';
+String googleApiKey = dotenv.env['GOOGLE_PLACES_API_KEY']!;
   
   GoogleMapController? _mapController;
   Position? _currentPosition;
@@ -618,7 +619,7 @@ class _TrackMePageState extends State<TrackMePage> {
       'location=${_currentPosition!.latitude},${_currentPosition!.longitude}'
       '&radius=1000' // 1 km radius
       '&type=$type'
-      '&key=$_googlePlacesApiKey'
+      '&key=$googleApiKey'
     );
 
     try {
