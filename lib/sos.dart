@@ -1470,6 +1470,8 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:twilio_flutter/twilio_flutter.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'siren.dart'; 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:twilio_flutter/twilio_flutter.dart';
 
 class SOSTimerScreen extends StatefulWidget {
   const SOSTimerScreen({Key? key}) : super(key: key);
@@ -1508,11 +1510,11 @@ class _SOSTimerScreenState extends State<SOSTimerScreen> {
   void _initTwilio() {
     // Initialize Twilio with your credentials
     // Store these securely, ideally in Firebase Remote Config or similar
-    twilioFlutter = TwilioFlutter(
-      accountSid: 'ACb378ff4ab39e261304634af1f5d2c2b8', // Replace with your Twilio Account SID
-      authToken: '48235f9354f3b628d3997df18e490aee',    // Replace with your Twilio Auth Token
-      twilioNumber: '12202156453' // Replace with your Twilio phone number
-    );
+     twilioFlutter = TwilioFlutter(
+    accountSid: dotenv.env['TWILIO_ACCOUNT_SID'] ?? "",
+    authToken: dotenv.env['TWILIO_AUTH_TOKEN'] ?? "",
+    twilioNumber: dotenv.env['TWILIO_NUMBER'] ?? "",
+  );
   }
 
   Future<void> _startSiren() async {
