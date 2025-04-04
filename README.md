@@ -25,11 +25,6 @@ Sanraksha is a comprehensive women safety mobile application built to empower an
 
 ---
 
-## 📸 Screenshots
-
-*(Include screenshots here to visually demonstrate the app features.)*
-
----
 
 ## 📱 Technologies Used
 - **Flutter** for frontend development
